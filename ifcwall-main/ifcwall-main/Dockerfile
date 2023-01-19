@@ -18,10 +18,8 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 ENV PATH=$CONDA_DIR/bin:$PATH
 RUN echo "source activate base" > ~/.bashrc
 ENV PATH /opt/conda/envs/base/bin:$PATH
-COPY cloud.las .
-COPY final1.py .
-COPY lines.dxf .
-COPY ref.xml .
+COPY 231110AC-11-Smiley-West-04-07-2007.ifc .
+COPY wall.py .
 
 RUN conda update -n base -c defaults conda \
     && conda install -c conda-forge --yes laspy \
